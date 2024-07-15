@@ -8,10 +8,8 @@ import {Merkle} from "lib/murky/src/Merkle.sol";
 import {ScriptHelper} from "lib/murky/script/common/ScriptHelper.sol";
 
 // Merkle proof generator script
-// To use:
-// 1. Run `forge script script/GenerateInput.s.sol` to generate the input file
-// 2. Run `forge script script/Merkle.s.sol`
-// 3. The output file will be generated in /script/target/output.json
+// Run `forge script script/GenerateInput.s.sol` to generate the input file
+// Run `forge script script/Merkle.s.sol`
 
 /** 
  * @title MakeMerkle
@@ -56,20 +54,20 @@ contract MakeMerkle is Script, ScriptHelper {
         returns (string memory)
     {
         string memory result = string.concat(
-            "{",
-            "\"inputs\":",
+            '{',
+            '"inputs":',
             _inputs,
-            ",",
-            "\"proof\":",
+            ',',
+            '"proof":',
             _proof,
-            ",",
-            "\"root\":\"",
+            ',',
+            '"root":"',
             _root,
-            "\",",
-            "\"leaf\":\"",
+            '",',
+            '"leaf":"',
             _leaf,
-            "\"",
-            "}"
+            '"',
+            '}'
         );
 
         return result;
